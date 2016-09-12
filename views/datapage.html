@@ -1,0 +1,66 @@
+
+<ng-include src="'/../partials/header.html'"></ng-include>
+
+
+<!-- </div graph-app> -->
+
+  <!-- end of graph stuff  -->
+  <div class="main" ng-controller="DataPageController as DPC">
+  <div class="datatable">
+
+    <h2 class="tablehead"> Current Compost Data </h2>
+    <table class="table">
+        <tr>
+          <th>temperature in C </th>
+          <th> temperature in F </th>
+          <th>% humidity</th>
+          <th>% dew point </th>
+        </tr>
+        <tr>
+          <td> {{DPC.data.data[0].temp | number:3 }}</td>
+          <td> {{DPC.data.data[0].temp * (1.8)+32 | number:3 }} </td>
+        <td>  {{DPC.data.data[0].humidity | number:3 }}</td>
+        <td> {{DPC.data.data[0].dewPoint | number:3 }}</td>
+        </tr>
+    </table>
+    <!-- {{ DPC.dataResults }} -->
+  </div>
+  <div class="buttons">
+        <button class="water" ng-click="DPC.waterCompost()">
+            <svg width="15%" viewbox="0 0 30 42" class="wat">
+
+                <path fill="transparent" stroke="#000" stroke-width="1.5" d="M15 3
+                   Q16.5 6.8 25 18
+                   A12.8 12.8 0 1 1 5 15
+                   Q13.5 6.8 15 3z">
+
+                </path>
+            </svg>
+            Water
+
+        </button>
+        <button class="turn" ng-click="DPC.turnCompost()">
+            <img src="https://cdn4.iconfinder.com/data/icons/arrows-29/96/Arrows1_turning_counterclockwise-512.png" style="height:20px"/>
+            Turn
+
+        </button>
+    </div>
+</div>
+
+<h1 class="graphheader">This weeks temperatures</h1>
+<div ng-controller="graphController as graph">
+
+<div class="graph" style="width:{{width}}px; height:{{height}}px;" >
+
+  <div class="y" style="width:{{height}}px;">{{yAxis}}</div>
+
+  <div class="x">{{xAxis}}</div>
+  <svg height="{{height}}" width="100%">
+    <line class="line{{$index}}" ng-repeat="point in points" x1="{{width / maxX * $index }}" y1="{{points[$index - 1].yValue / maxY * height}}" x2="{{width / maxX * ($index + 1)}}" y2="{{point.yValue / maxY * height}}" />
+  </svg>
+  <div class="dot dot{{$index}}" ng-repeat="point in points" style="bottom:calc({{point.yValue}}/{{maxY}}*{{height}}px - 5px); left:calc({{point.xValue}}/{{maxX}}*{{width}}px - 5px);" data-title="{{point.label}}: {{point.yValue}}"></div>
+
+</div>
+</div>
+
+<ng-include src="'/../partials/footer.html'"></ng-include>
