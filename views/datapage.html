@@ -47,20 +47,6 @@
     </div>
 </div>
 
-<h1 class="graphheader">This weeks temperatures</h1>
-<div ng-controller="graphController as graph">
 
-<div class="graph" style="width:{{width}}px; height:{{height}}px;" >
-
-  <div class="y" style="width:{{height}}px;">{{yAxis}}</div>
-
-  <div class="x">{{xAxis}}</div>
-  <svg height="{{height}}" width="100%">
-    <line class="line{{$index}}" ng-repeat="point in points" x1="{{width / maxX * $index }}" y1="{{points[$index - 1].yValue / maxY * height}}" x2="{{width / maxX * ($index + 1)}}" y2="{{point.yValue / maxY * height}}" />
-  </svg>
-  <div class="dot dot{{$index}}" ng-repeat="point in points" style="bottom:calc({{point.yValue}}/{{maxY}}*{{height}}px - 5px); left:calc({{point.xValue}}/{{maxX}}*{{width}}px - 5px);" data-title="{{point.label}}: {{point.yValue}}"></div>
-
-</div>
-</div>
 
 <ng-include src="'/../partials/footer.html'"></ng-include>
