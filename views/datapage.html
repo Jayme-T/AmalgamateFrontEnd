@@ -47,6 +47,12 @@
     </div>
 </div>
 
+<div class="graph" ng-controller="BarCtrl">
+<h1> Average Temperature This Week vs. Last </h1>
+<canvas id="bar" class="chart chart-bar" chart-colors="colors"
+chart-data="data" chart-labels="labels" chart-series="series">
+</canvas>
+</div>
 
 
 <ng-include src="'/../partials/footer.html'"></ng-include>

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('DataPageController',['$http','$location','DataService', function($http, $location, DataService){
+app.controller('DataPageController',['$http','$location', function($http, $location){
   var vm=this;
   // vm.dataResults=DataService.getData();
     $http.get('http://184.96.221.90:5000')
@@ -38,3 +38,14 @@ vm.turnCompost=function(){
 };
 
 }]);
+
+app.controller("BarCtrl", function ($scope) {
+  $scope.labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday', 'Sunday'];
+  $scope.series = ['This Week', 'Last Week'];
+
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55],
+    [28, 48, 40, 19, 86, 27]
+  ];
+  $scope.colors = ['#A29F15','#510D0A','#F3B61F','#191102'];
+});
