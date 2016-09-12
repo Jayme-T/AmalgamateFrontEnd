@@ -68,7 +68,7 @@ a:hover{
   font-weight: bold;
 }
 .water{
-  background-color: #F3B61F;
+  background-color: rgba(243, 182, 31, .6);
   /*background-color: #A29F15;*/
 
   /*background-color: #BBD8B3;*/
@@ -83,7 +83,7 @@ a:hover{
  margin-left:37%;
 }
 .turn{
-  background-color: #F3B61F;
+  background-color: rgba(243, 182, 31, .6);
   /*background-color: #A29F15;*/
 
   /*background-color: #BBD8B3;*/
@@ -109,6 +109,7 @@ a:hover{
   width:50%;
   text-align: center;
   margin-left:25%;
+  margin-bottom:5%;
 }
 .table{
   border-style:solid;
