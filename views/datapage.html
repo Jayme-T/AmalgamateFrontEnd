@@ -1,31 +1,30 @@
-
-<ng-include src="'/../partials/header.html'"></ng-include>
+<ng-include src="'/../partials/header.html'">
+</ng-include>
 
 
 <!-- </div graph-app> -->
 
-  <!-- end of graph stuff  -->
-  <div class="main" ng-controller="DataPageController as DPC">
-  <div class="datatable">
-
-    <h2 class="tablehead"> Current Compost Data </h2>
-    <table class="table">
-        <tr>
-          <th>temperature in C </th>
-          <th> temperature in F </th>
-          <th>% humidity</th>
-          <th>% dew point </th>
-        </tr>
-        <tr>
-          <td> {{DPC.data.data[0].temp | number:3 }}</td>
-          <td> {{DPC.data.data[0].temp * (1.8)+32 | number:3 }} </td>
-        <td>  {{DPC.data.data[0].humidity | number:3 }}</td>
-        <td> {{DPC.data.data[0].dewPoint | number:3 }}</td>
-        </tr>
-    </table>
-    <!-- {{ DPC.dataResults }} -->
-  </div>
-  <div class="buttons">
+<!-- end of graph stuff  -->
+<div class="main" ng-controller="DataPageController as DPC">
+    <div class="datatable">
+        <h2 class="tablehead"> Current Compost Data </h2>
+        <table class="table">
+            <tr>
+                <th>temperature in C </th>
+                <th> temperature in F </th>
+                <th>% humidity</th>
+                <th>% dew point </th>
+            </tr>
+            <tr>
+                <td> {{DPC.data.data[0].temp | number:3 }}</td>
+                <td> {{DPC.data.data[0].temp * (1.8)+32 | number:3 }} </td>
+                <td> {{DPC.data.data[0].humidity | number:3 }}</td>
+                <td> {{DPC.data.data[0].dewPoint | number:3 }}</td>
+            </tr>
+        </table>
+        <!-- {{ DPC.dataResults }} -->
+    </div>
+    <div class="buttons">
         <button class="water" ng-click="DPC.waterCompost()">
             <svg width="15%" viewbox="0 0 30 42" class="wat">
 
@@ -40,19 +39,14 @@
 
         </button>
         <button class="turn" ng-click="DPC.turnCompost()">
-            <img src="https://cdn4.iconfinder.com/data/icons/arrows-29/96/Arrows1_turning_counterclockwise-512.png" style="height:20px"/>
-            Turn
+            <img src="https://cdn4.iconfinder.com/data/icons/arrows-29/96/Arrows1_turning_counterclockwise-512.png" style="height:20px" /> Turn
 
         </button>
     </div>
 </div>
-
 <div class="graph" ng-controller="BarCtrl">
-<h1> Average Temperature This Week vs. Last </h1>
-<canvas id="bar" class="chart chart-bar" chart-colors="colors"
-chart-data="data" chart-labels="labels" chart-series="series">
-</canvas>
+    <h1> Average Temperature This Week vs. Last </h1>
+    <canvas id="bar" class="chart chart-bar" chart-colors="colors" chart-data="data" chart-labels="labels" chart-series="series">
+    </canvas>
 </div>
-
-
 <ng-include src="'/../partials/footer.html'"></ng-include>

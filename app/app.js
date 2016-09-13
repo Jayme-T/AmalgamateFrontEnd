@@ -3,8 +3,10 @@ var app= angular.module('piData',['ngRoute', 'chart.js']);
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider
         // .when('/',{templateUrl:'/templates/start'})
-        .when('/',{templateUrl:'../views/datapage'})
-        .when('/home', {templateUrl:'../views/home'})
+        .when('/data',{templateUrl:'../views/datapage'})
+        .when('/', {templateUrl:'../views/home'})
+        .when('/project', {templateUrl:'../views/project'})
+        .when('/aboutme', {templateUrl:'../views/aboutme'})
         .otherwise({redirectTo:'/'});
 }]);
 
