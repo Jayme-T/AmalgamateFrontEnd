@@ -47,22 +47,41 @@ app.controller("BarCtrl", function ($scope, $http) {
 //
     $http.get('http://71.212.144.15:5000/data')
     .then(function(result){
-      console.log(result);
+      var data=[];
+      var mean=0;
+      result=result.data.data;
+      for(var i=0; i<result.length; i++){
+        data.push(result[i][0]);
+        mean=mean+result[i][0];
+
+      }
+      mean=mean/(result.length);
+      console.log(data);
+      console.log(mean);
+      var sum=0;
+      var sigma;
+      for(var i=0; i<data.length; i++){
+        sum=sum+(Math.pow(data[i]-mean, 2));
+      }
+      console.log(sum);
+      sigma=Math.sqrt(sum)*(1/data.length);
+      console.log(sigma);
     });
+
     // .success(function(data2) {
     //   $scope.data = [];
     //   data2.forEach(function(r) {
     //     console.log(r);
     //     $scope.data.push({
     //       'value': r.temp
-      
+
       // });
 
 
 
-  // $scope.data = [
-  //   [65, 59, 80, 81, 56, 55],
-  //   [28, 48, 40, 19, 86, 27]
-  // ];
+  $scope.data = [
+    [65, 59, 80, 81, 56, 55],
+    [28, 48, 40, 19, 86, 27]
+  ];
   $scope.colors = ['#A29F15','#510D0A','#F3B61F','#191102'];
 });
