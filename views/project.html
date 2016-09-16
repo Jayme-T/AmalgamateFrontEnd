@@ -12,21 +12,110 @@
         </ul>
     </div>
 </div>
+<div>
+    <h1 class="title"> Problems Along The Way </h1>
+    <div class="problemtext">
+        <p> I am happy to tell you all the supplies and steps to building this project but first I want to make a list of the troubles I have ran into along the way. I hope that if any of you are planning to recreate this project you read the problems carefully
+            because though I overcame all of these problems there are ways to have avoided them from the beginning if I had been able to predict that they would occur </p>
+        <ul>
+            <li> Making an api on a raspberry pi (terminals from remote devices)
+                <p> I had read about using ssh to get access into a raspberry pi and after deploying on Amazon Web Server I felt like I had a good grasp of ssh-ing. However, I didn't think much about what I would do once I was on the command line of the raspberry
+                    pi. I didn't know how to start writing code like I would in a terminal except to use nano/vim or a terminal text editor. I began experimenting with my products in nano and soon had five or six function running in different nano files.
+                    However, when I decided to commit to this project I realized I didn't want to write my entire backen api in nano for a number of reasons (verbal reason-bad practice, real reason- I like my life too much to do that to myself). To overcome
+                    this problem I had to learn about different options available. I considered writing all of my code on my computer and then secure file coping it to my pi but this seemed tedius especially when learning a new language and wanting to
+                    test small function with my actual sensors. I finally read about XQuartz as a way to see files or editors and read about someone who was using it with a Mac to see files from the raspberry pi. I decided to give this a try and it worked
+                    perfectly. From my computer I can now ssh into my pi and when I use the pi's commandline to open a text editor XQuarts automatically opens and displays my text editor files.
+            </li>
+            <li> Library problems in python
+                <p> I learned python for this project. With no background in python and a whole new project at hand I set out for adventure. This was actually one of the first problems I ran into and it was when all my code was still in a nano files, which
+                    was another unfamilar environment for me. I wrote code to try and read data from my soil moisture sensor. My soil moisture sensor is an SHT10 model and part of a series called SHT1X. I was using a library that was developed to work
+                    with these sensors and was getting a GPIO pin problem. The GPIO was related directly to this library but I had not quite figured that out yet so I first though this meant I had used the wrong pins on my raspberry pi. This particular
+                    sensor has a handful of pictures on the internet of "how to set it up" and all of them are different. I tried reconfiguring how I set up the sensor and got the same error. I kept trying different code, trying different set ups, and
+                    trying to google my problems and kept getting the same results. GPIO pin errors in general tend to do with not configuring your pins correctly however after many hours of this I found out in one small comment off another page of information
+                    that in Python 2.7.10 (the version I am using) there is a one line error in the python library. In my nano window where lines are not numbered I counted hundreds of lines down to fix the library but it was all worth it when immediately
+                    I got the results I expected.
+                </p>
+            </li>
+
+    </div>
+</div>
 <div class="recreating">
-  <h1 class="title"> Making Your Own Composter</h1>
-  <p class="title"> **If you are thinking of making your own invessel composting system please feel free to follow these steps. I encourage people to reduce waste. **
-  </p>
-  <h2 class="title"> Supplies </h2>
-  <!-- for every list item have a pic then words
+    <h1 class="title"> Making Your Own Composter</h1>
+    <p class="title"> **If you are thinking of making your own invessel composting system please feel free to follow these steps. I encourage people to reduce waste. **
+    </p>
+    <div class="supplies">
+        <h2 class="title"> Supplies </h2>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/soilmoisturesensor.png">
+            <div> Soil Moisture </div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/battery.png">
+            <div> Battery </div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/wirecover.png">
+            <div> Wire Cover </div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/pi.jpg">
+            <div>Raspberry Pi</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/tubing.png">
+            <div>Tubing</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/wire.jpg">
+            <div>Wire</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/cat.jpg">
+            <div>Friend</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/relay.png">
+            <div>Relay</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/femalewires.png">
+            <div> Female connector</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/multimeter.jpg">
+            <div>Multimeter</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/buttandconnectors.jpg">
+            <div>butts and connectors</div>
+        </div>
+        <div class="labels">
+            <img class="soilsense" src="./../pictures/batterycharger.jpg">
+            <div>Battery Charger</div>
+        </div>
+        <!-- <img class="soilsense" src="./../pictures/solarpanel.jpg">Multimeter</img>
+    <img class="soilsense" src="./../pictures/multimeter.jpg">Multimeter</img> -->
+    </div>
+
+    <div class="labels">12V Battery</div>
+    <!-- for every list item have a pic then words
   relay
   soil moisture sensor
   water valve
   composter
   converter 12v to 5 v
   loom wire
-  
-
 -->
+    <!-- <div class="steps"> -->
+    <div class="supplies, steps">
+        <h2 class="title"> Steps </h2>
+        <div class="problemtext">
+            <ol>
+              <li> 
+              </li>
+            </ol>
+        </div>
+    </div>
 
 </div>
 <ng-include src="'/../partials/footer.html'"></ng-include>

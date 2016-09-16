@@ -3,7 +3,7 @@
 app.controller('DataPageController',['$http','$location', function($http, $location){
   var vm=this;
   // vm.dataResults=DataService.getData();
-    $http.get('http://71.212.144.15:5000')
+    $http.get('http://10.7.17.84:5000')
     .then(function(response){
       console.log("response", response);
       vm.data=response;
@@ -15,10 +15,10 @@ app.controller('DataPageController',['$http','$location', function($http, $locat
     });
 
 vm.waterCompost=function(){
-  $http.post('http://71.212.144.15:5000/water')
+  $http.post('http://10.7.17.84:5000/water')
   .then(function(response){
     console.log("response", response);
-    vm.data=response;
+    vm.water=response;
   })
   .catch(function(err){
     console.log('error');
@@ -26,7 +26,7 @@ vm.waterCompost=function(){
 });
 };
 vm.turnCompost=function(){
-  $http.post('http://71.212.144.15:5000/turn')
+  $http.post('http://10.7.17.84:5000/turn')
   .then(function(response){
     console.log("response", response);
     vm.data=response;
@@ -45,7 +45,7 @@ app.controller("BarCtrl", function ($scope, $http) {
 
 
 
-    $http.get('http://71.212.144.15:5000/data')
+    $http.get('http://10.7.17.84:5000/data')
     .then(function(result){
 
 
